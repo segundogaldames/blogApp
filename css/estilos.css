@@ -1,0 +1,40 @@
+body{
+	background-color: #E6E6E6;
+}
+
+header h2{
+	color: #2E64FE;
+}
+
+header h4{
+	color: #5882FA;
+	font-style: italic;
+}
+
+hr{
+	background-color: #A9D0F5;
+	height: 2px;
+}
+
+.navbar-reverse{
+	background-color: #A9D0F5 !important;
+}
+
+footer{
+	height: 60px;
+	background-color: #A9D0F5;
+	padding: 10px;
+	border-radius: 2px 2px 2px 2px;
+	-moz-border-radius: 2px 2px 2px 2px;
+	-webkit-border-radius: 2px 2px 2px 2px;
+	border: 0px solid #000000
+}
+
+.text-footer{
+	color: #5882FA;
+	font-style: italic;
+}
+
+.widget{
+	margin-left: 10px;
+}
