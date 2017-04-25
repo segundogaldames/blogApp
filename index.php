@@ -6,7 +6,6 @@ require_once('class/articulo.php');
 if(isset($_GET['m']) && $_GET['m'] == 'ok'){
 	$msg = "La categoria se ha ingresado correctamente";
 }
-
 $art = new Articulo();
 
 //print_r($lista);exit;

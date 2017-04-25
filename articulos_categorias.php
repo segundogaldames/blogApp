@@ -1,3 +1,12 @@
+<?php 
+$categoria = (int) $_GET['id'];
+//print_r($categoria);
+require_once('class/articulo.php');
+$art = new Articulo();
+$art->getArticulosCategoria($categoria);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +30,18 @@
 			<?php include('widget.php'); ?>
 		</div>
 		<div class="col-md-8">
+			<?php 
+				$lista = $art->getArticulosCategoria($categoria);
+				if(isset($lista)):
+					foreach($lista as $list):?>
+					<h3><?php echo $list['titulo']; ?></h3>
 			
+					<p class="text-justify"><?php echo $list['texto']; ?></p>
+					<?php endforeach;?>
+					<?php else:
+					?>
+					<p class="alert alert-danger">No hay articulos asociados</p>
+				<?php endif;?>
 		</div>	
 	</div>
 	
