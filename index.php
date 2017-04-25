@@ -1,8 +1,15 @@
 <?php
+require_once('class/articulo.php');
+
+
 //Validamos si la variable $m enviada desde el servidor existe y si su valor es ok
 if(isset($_GET['m']) && $_GET['m'] == 'ok'){
 	$msg = "La categoria se ha ingresado correctamente";
 }
+
+$art = new Articulo();
+
+//print_r($lista);exit;
 ?>
 
 <!DOCTYPE html>
@@ -32,11 +39,16 @@ if(isset($_GET['m']) && $_GET['m'] == 'ok'){
 		<?php if(isset($msg)):?>
 			<p class="alert alert-success"><?php echo $msg; ?></p>
 		<?php endif;?>
-
-			<h3>Título Artículo</h3>
-			<p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae qui alias voluptas reiciendis delectus molestiae officiis perferendis vitae rem inventore, iusto adipisci mollitia expedita, sint similique, voluptatibus explicabo? Vero, sunt</p>
+		<?php 
+			$lista = $art->getArticulos();
+			foreach($lista as $list):?>
+			<h3><?php echo $list['titulo']; ?></h3>
+			
+			<p class="text-justify"><?php echo $list['texto']; ?></p>
+			
 			<input type="submit" value="Comentar" class="btn btn-primary btn-sm">
 			<hr>
+		<?php endforeach;?>
 		</div>	
 	</div>
 	

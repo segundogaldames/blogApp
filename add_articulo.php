@@ -39,7 +39,7 @@ if(isset($_POST['enviar']) && $_POST['enviar'] == 1){
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/estilos.css">
-	<title>Nueva Categoría</title>
+	<title>Nuevo Artículo</title>
 </head>
 <body>
 	<div class="container">
