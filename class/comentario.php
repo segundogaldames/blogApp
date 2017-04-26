@@ -6,6 +6,7 @@ class Comentario extends Model
 	private $_texto;
 	private $_articulo;
 
+	//metodo para rescatar comentarios por articulos
 	public function getComentariosArticulos($articulo){
 		$this->_articulo = (int) $articulo;
 
@@ -16,6 +17,7 @@ class Comentario extends Model
 		return $com->fetchall();
 	}
 
+	//metodo para ingresar comentarios
 	public function setComentarios($comentario, $articulo){
 		//print_r($comentario);exit;
 		$this->_texto = $comentario;
