@@ -23,7 +23,7 @@
             <li><a href="#">Administrar Categorías</a></li>
             <li><a href="add_categoria.php">Agregar Categorías</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Administrar Artículos</a></li>
+            <li><a href="articulos.php">Administrar Artículos</a></li>
             <li><a href="add_articulo.php">Agregar Artículos</a></li>
           </ul>
         </li>

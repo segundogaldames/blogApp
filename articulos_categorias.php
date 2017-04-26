@@ -32,7 +32,7 @@ $art->getArticulosCategoria($categoria);
 		<div class="col-md-8">
 			<?php 
 				$lista = $art->getArticulosCategoria($categoria);
-				if(isset($lista)):
+				if($lista):
 					foreach($lista as $list):?>
 					<h3><?php echo $list['titulo']; ?></h3>
 			
