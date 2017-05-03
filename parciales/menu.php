@@ -25,6 +25,9 @@
             <li role="separator" class="divider"></li>
             <li><a href="articulos.php">Administrar Artículos</a></li>
             <li><a href="add_articulo.php">Agregar Artículos</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="comentarios.php">Administrar Comentarios</a></li>
+            <li><a href="index.php">Agregar Comentarios</a></li>
           </ul>
         </li>
       </ul>
@@ -35,7 +38,7 @@
         <button type="submit" class="btn btn-default">Buscar</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Iniciar Sesión</a></li>       
+        <li><a href="#">Iniciar Sesión</a></li>
         <li><a href="#">Registrarse</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Usuarios <span class="caret"></span></a>
