@@ -1,9 +1,7 @@
 <?php
-require_once('class/articulo.php');
-require_once('class/comentario.php');
+require_once('class/categoria.php');
 
-$art = new Articulo();
-$com = new Comentario();
+$cat = new Categoria();
 
 ?>
 
@@ -11,7 +9,7 @@ $com = new Comentario();
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Lista de Comentarios</title>
+	<title>Lista de Categorias</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/estilos.css">
 	<script type="text/javascript" src="js/jquery-3.2.0.min.js"></script>
@@ -33,28 +31,25 @@ $com = new Comentario();
 		<!--Pagina que muestra todos los articulos y administrar-->
 		<table class="table table-striped table-hover">
 			<tr>
-				<th>Articulo</th>
-				<th>Fecha</th>
-				<th>Comentario</th>
+				<th>Categoría</th>
 				<th>Acciones</th>
 			</tr>
 			<!--Ciclo para mostrar los registros de la tabla articulos-->
 			<?php
-			$lista = $com->getComentarioArticulo();
+			$lista = $cat->getCategorias();
 			foreach($lista as $list):
 			?>
 				<tr>
-					<td><?php echo $list['articulo']; ?></td>
-					<td><?php echo $list['fecha']; ?></td>
-					<td><?php echo $list['titulo']; ?></td>
+					<td><?php echo $list['nombre']; ?></td>
 					<td>
-						<a href="ver_comentario.php?id=<?php echo $list['id']; ?>">Ver</a>&nbsp;&nbsp;
-						<a href="edit_comentario.php?id=<?php echo $list['id']; ?>">Editar</a>&nbsp;&nbsp;
-						<a href="delete_comentario.php?id=<?php echo $list['id']; ?>">Eliminar</a>
+						<!--<a href="ver_articulo.php?id=<?php echo $list['id']; ?>">Ver</a>&nbsp;&nbsp;-->
+						<a href="edit_categoria.php?id=<?php echo $list['id']; ?>">Editar</a>&nbsp;&nbsp;
+						<a href="delete_categoria.php?id=<?php echo $list['id']; ?>">Eliminar</a>
 					</td>
 				</tr>
 			<?php endforeach;?>
 		</table>
+		<p><a href="add_categoria.php">Agregar Categoria</a></p>
 		<div style="padding-top: 30px"></div>
 		</div>
 	</div>
