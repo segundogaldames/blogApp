@@ -1,7 +1,11 @@
 <?php
 require_once('class/articulo.php');
 require_once('class/comentario.php');
+require_once('class/session.php');
 
+Session::init();
+
+//print_r(Session::get('nom_usuario'));
 
 //Validamos si la variable $m enviada desde el servidor existe y si su valor es ok
 if(isset($_GET['m']) && $_GET['m'] == 'ok'){

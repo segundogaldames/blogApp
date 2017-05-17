@@ -1,4 +1,7 @@
 <?php 
+require_once('class/session.php');
+Session::init();
+
 $categoria = (int) $_GET['id'];
 //print_r($categoria);
 require_once('class/articulo.php');

@@ -50,7 +50,8 @@ class Articulo extends Model
 		$art->bindParam(4, $id);
 		$art->execute();
 
-		header('Location: articulos.php');
+		$msg_confirm = 'ok_edit';
+		header('Location: articulos.php?m=' . $msg_confirm);
 	}
 
 	//metodo que inserta articulos en la tabla articulos
@@ -65,6 +66,9 @@ class Articulo extends Model
 		$art->bindParam(2, $this->_texto);
 		$art->bindParam(3, $this->_categoria);
 		$art->execute();
+
+		$msg_confirm = "ok_set";
+		header('Location: articulos.php?m=' . $msg_confirm);
 	}
 
 	public function deleteArticulo($id){
@@ -74,6 +78,7 @@ class Articulo extends Model
 		$art->bindParam(1, $id);
 		$art->execute();
 
-		header('Location: articulos.php');
+		$msg_confirm = 'ok_del';
+		header('Location: articulos.php?m=' . $msg_confirm);
 	}
 }

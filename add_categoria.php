@@ -1,5 +1,7 @@
 <?php 
 require_once('class/categoria.php');
+require_once('class/session.php');
+Session::init();
 
 if (isset($_POST['enviar']) && $_POST['enviar'] == 1) {
 	//print_r($_POST);

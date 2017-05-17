@@ -1,3 +1,7 @@
+<?php
+//include_once('../class/session.php');
+//Session::init();
+?>
 <nav class="navbar navbar-reverse">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -17,6 +21,7 @@
         <li><a href="#">Nosotros</a></li>
         <li><a href="#">Noticias</a></li>
         <li><a href="#">Contacto</a></li>
+        <?php if(Session::get('autenticado')):?>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Administrar <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -25,8 +30,11 @@
             <li role="separator" class="divider"></li>
             <li><a href="articulos.php">Administrar Artículos</a></li>
             <li><a href="add_articulo.php">Agregar Artículos</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="comentarios.php">Administrar Comentarios</a></li>
           </ul>
         </li>
+        <?php endif;?>
       </ul>
       <form class="navbar-form navbar-left">
         <div class="form-group">
@@ -35,8 +43,12 @@
         <button type="submit" class="btn btn-default">Buscar</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Iniciar Sesión</a></li>       
-        <li><a href="#">Registrarse</a></li>
+        <?php if(!Session::get('autenticado')):?>
+        <li><a href="login.php">Iniciar Sesión</a></li>      
+        <li><a href="addUsuario.php">Registrarse</a></li>
+       <?php else:?>
+          <li><a href="logout.php">Cerrar Sesión</a></li>
+        
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Usuarios <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -47,6 +59,7 @@
             <li><a href="#">Separated link</a></li>
           </ul>
         </li>
+        <?php endif;?>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

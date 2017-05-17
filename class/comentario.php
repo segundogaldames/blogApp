@@ -6,6 +6,11 @@ class Comentario extends Model
 	private $_texto;
 	private $_articulo;
 
+	//metodo para mostrar todos los comentarios
+	public function getComentarios(){
+		$com = $this->_db->query("SELECT c.texto, c.fecha, a.titulo FROM articulos as a INNER JOIN comentarios as c ON c.articulo_id = a.id ");
+		return $com->fetchall();
+	}
 	//metodo para rescatar comentarios por articulos
 	public function getComentariosArticulos($articulo){
 		$this->_articulo = (int) $articulo;
