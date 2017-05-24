@@ -62,7 +62,6 @@ if (isset($_POST['enviar']) && $_POST['enviar'] == 1) {
 			<?php include('widget.php'); ?>
 		</div>
 		<div class="col-md-8">
-
 		<!--Se muestra mensaje si existe la variable msg-->
 		<?php if(isset($msg)):?>
 			<p class="alert alert-success"><?php echo $msg; ?></p>

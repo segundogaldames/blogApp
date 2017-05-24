@@ -3,6 +3,8 @@ require_once('class/usuario.php');
 require_once('class/session.php');
 Session::init();
 
+if(!Session::get('autenticado')):
+
 $user = new Usuario();
 
 if (isset($_POST['enviar']) && $_POST['enviar'] == 1) {
@@ -88,4 +90,9 @@ if (isset($_POST['enviar']) && $_POST['enviar'] == 1) {
 
 
 </body>
-</html>				
+</html>	
+<?php 
+else:
+	header('Location: index.php');
+endif;
+?>			

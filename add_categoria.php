@@ -3,20 +3,24 @@ require_once('class/categoria.php');
 require_once('class/session.php');
 Session::init();
 
-if (isset($_POST['enviar']) && $_POST['enviar'] == 1) {
-	//print_r($_POST);
-	
-	//se crea una instancia de la clase Categoria
-	$cat = new Categoria();
+//comprobacion de que un usuario esté autenticado
+if (Session::get('autenticado')) {
 
-	$nombre = strip_tags($_POST['nombre']);
 
-	if (empty($nombre)) {
-		$msg = "Debes ingresar el nombre de la categoria";
-	}else {
-		$cat->setCategorias($nombre);
+	if (isset($_POST['enviar']) && $_POST['enviar'] == 1) {
+		//print_r($_POST);
+		
+		//se crea una instancia de la clase Categoria
+		$cat = new Categoria();
+
+		$nombre = strip_tags($_POST['nombre']);
+
+		if (empty($nombre)) {
+			$msg = "Debes ingresar el nombre de la categoria";
+		}else {
+			$cat->setCategorias($nombre);
+		}
 	}
-}
 
 ?>
 <!DOCTYPE html>
@@ -68,3 +72,9 @@ if (isset($_POST['enviar']) && $_POST['enviar'] == 1) {
 </div>	
 </body>
 </html>
+<?php 
+}else{
+	echo "<h3>Error de acceso</h3>" ;
+}
+
+?>

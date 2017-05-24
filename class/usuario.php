@@ -1,6 +1,7 @@
 <?php
 require_once('model.php');
 require_once('hash.php');
+require_once('config.php');
 
 class Usuario extends Model
 {
